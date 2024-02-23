@@ -1,3 +1,23 @@
+**PowerAudio fork of sfizz**
+
+This fork of sfizz has the following changes:
+
+* Updated dependency, allowing plugin to be built on non-x86, non-ARM
+  architectures, including IBM Power.
+
+To use this fork while building [sfizz-ui], run the following commands from
+within your copy of sfizz-ui:
+
+[sfizz-ui]: https://github.com/sfztools/sfizz-ui
+
+```sh
+git submodule set-url library https://github.com/poweraudio/sfizz
+cd library
+git fetch
+git checkout origin/develop
+git submodule update --init --recursive
+```
+
 # sfizz
 
 [![build actions]](https://github.com/sfztools/sfizz/actions)
