@@ -18,6 +18,8 @@ git checkout origin/develop
 git submodule update --init --recursive
 ```
 
+---
+
 # sfizz
 
 [![build actions]](https://github.com/sfztools/sfizz/actions)
