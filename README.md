@@ -6,38 +6,6 @@ been merged upstream:
 * Updated dependency, allowing plugin to be built on non-x86, non-ARM
   architectures, including IBM Power.
 
-However, as of 2024-09-06, the version of sfizz used by [sfizz-ui] doesn’t
-include those changes, so it may still be useful to follow the instructions
-below:
-
-To use this fork while building [sfizz-ui], run the following commands from
-within your copy of sfizz-ui:
-
-[sfizz-ui]: https://github.com/sfztools/sfizz-ui
-
-```sh
-# (Optional, but other commits haven't been tested)
-git checkout ec4656d1dd06010d2eb315be24477a3d6ab5b0f9
-
-git submodule set-url library https://github.com/poweraudio/sfizz
-git -C library fetch
-git -C library checkout 0dad2e442b390879b0b6a962d0329ccc530135ca
-git -C library submodule sync --recursive
-git -C library submodule update --init --recursive
-```
-
-Also, as of 2024-09-06, vstgui needs to be patched to avoid errors with newer
-versions GCC:
-
-```sh
-submodule=plugins/editor/external/vstgui4
-git submodule set-url $submodule https://github.com/poweraudio/sfizz-vstgui
-git -C $submodule fetch
-git -C $submodule checkout 6ab1209ac82fc7af0fd3904cd9095036cc1403f7
-git -C $submodule sync --recursive
-git -C $submodule update --init --recursive
-```
-
 ---
 
 # sfizz
